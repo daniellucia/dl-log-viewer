@@ -271,7 +271,7 @@ class Plugin
     public function render_filters_form() {
 
         $current_level = isset($_GET['level']) ? sanitize_text_field($_GET['level']) : '';
-        $current_file = isset($_GET['file']) ? sanitize_text_field($_GET['file']) : '';
+        $current_search = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
         $current_line = isset($_GET['line']) ? sanitize_text_field($_GET['line']) : '';
         ?>
 
@@ -288,8 +288,8 @@ class Plugin
                 <option value="ERROR" <?php selected($current_level, 'ERROR'); ?>>Error</option>
             </select>
 
-            <label for="file" style="margin-left:10px;"><?php echo esc_html(__('File contains:', 'dl-log-viewer')); ?></label>
-            <input type="text" id="file" name="file" value="<?php echo esc_attr($current_file); ?>" placeholder="functions.php">
+            <label for="search" style="margin-left:10px;"><?php echo esc_html(__('Search:', 'dl-log-viewer')); ?></label>
+            <input type="text" id="search" name="search" value="<?php echo esc_attr($current_search); ?>" placeholder="functions.php">
 
             <label for="line" style="margin-left:10px;"><?php echo esc_html(__('Line:', 'dl-log-viewer')); ?></label>
             <input type="text" id="line" name="line" value="<?php echo esc_attr($current_line); ?>" placeholder="6121">
