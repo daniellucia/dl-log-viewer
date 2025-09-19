@@ -41,7 +41,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 define('DL_LOG_VIEWER_VERSION', '0.0.5');
 define('DL_LOG_VIEWER_FILE', __FILE__);
 
-add_action('plugins_loaded', function () {
+add_action('init', function () {
 
     load_plugin_textdomain('dl-log-viewer', false, dirname(plugin_basename(DL_LOG_VIEWER_FILE)) . '/languages');
 
